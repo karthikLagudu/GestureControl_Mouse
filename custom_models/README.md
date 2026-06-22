@@ -16,7 +16,7 @@ To generate the Post Processing model, some python packages are needed: torch, o
 > python3 -m pip install -r requirements.txt
 ```
 
-*Note the restriction on torch version in requirements.txt. A newer version of torch (1.10) generates an [error](https://github.com/geaxgx/depthai_hand_tracker/issues/8) when converting the ONNX model to Openvino IR (2021.4).*
+*Note the restriction on torch version in requirements.txt. A newer version of torch (1.10) generates an error when converting the ONNX model to Openvino IR (2021.4).*
 
 ## Build the ONNX model
 

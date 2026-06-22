@@ -101,7 +101,10 @@ class HandController:
         self.poses_hist = [EventHist() for i in range(len(self.pose_actions))]
 
         # Load HandTracker
-        from hand_tracker_edge import HandTracker
+        if self.config.get('use_webcam', False):
+            from hand_tracker_webcam import HandTrackerWebcam as HandTracker
+        else:
+            from hand_tracker_edge import HandTracker
        
         # Initialize tracker
         self.tracker = HandTracker(**self.config['tracker']['args'])

@@ -26,6 +26,7 @@ from hand_pose_controller import HandController
 # Initialize the parser
 parser = argparse.ArgumentParser(description="Sample argument parser")
 parser.add_argument('-r', '--enable-renderer', action='store_true', help='Enable renderer')
+parser.add_argument('-w', '--webcam', action='store_true', help='Use built-in laptop webcam instead of OAK-D')
 
 # Parse the arguments
 args = parser.parse_args()
@@ -35,6 +36,8 @@ if args.enable_renderer:
     enable_flag = True
 else:
     enable_flag = False
+
+use_webcam = bool(args.webcam)
     
 # Control mouse
 mouse = Controller()
@@ -125,7 +128,8 @@ def move(event):
     # Use location of index
     x, y = event.hand.landmarks[8,:2]
     x /= cam_width
-    x = 1 - x
+    if not use_webcam:
+        x = 1 - x
     y /= cam_height
     e = 0.15
     p1 = monitor.width/(1-2*e)
@@ -171,6 +175,7 @@ def scroll(event):
     
     
 config = {
+    'use_webcam': use_webcam,
     'renderer' : {'enable': enable_flag},
     
     'pose_actions' : [

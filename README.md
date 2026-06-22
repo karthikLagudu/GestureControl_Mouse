@@ -45,9 +45,9 @@ The system recognizes specific hand poses to control the cursor:
 
 Ensure your hand is in the view of the OAK-D Lite camera, and the system will track your hand movements, interpreting them to control the cursor accordingly.
 
-## Contributions and Acknowledgements
+## License & Ownership
 
-This project was inspired by the [depthai_hand_tracker](https://github.com/geaxgx/depthai_hand_tracker) repository, and I acknowledge the groundbreaking work they have shared with the community and do not claim any rights for their work. Contributions to enhance functionality or performance are warmly welcomed. Feel free to submit issues or pull requests.
+This project is created and owned by the repository owner. All rights reserved. Contributions to enhance functionality or performance are welcome. Feel free to submit issues or pull requests.
 
 
 ## Disclaimer

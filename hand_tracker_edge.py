@@ -1,5 +1,5 @@
 import numpy as np
-import mediapipe as mp
+import mediapipe_utils as mp
 import depthai as dai
 from pathlib import Path
 import sys
